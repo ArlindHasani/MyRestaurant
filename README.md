@@ -1,3 +1,2 @@
-# MyRestaurant
+# MyRestaurant - Projekti ne Inxhineri Web
 
-# Projekti ne Inxhineri Web
