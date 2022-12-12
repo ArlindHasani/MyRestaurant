@@ -46,7 +46,7 @@
 html{
     background-color: var(--bg);
     scroll-behavior: smooth;
-  /*  animation: fadeIn 2s;*/
+    animation: fadeIn 2s;
 }
 
 section{
