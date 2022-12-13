@@ -477,3 +477,112 @@ header{
         animation: slideInRight .75s both;
     }
 }
+/* contact*/
+body{
+    margin: 0;
+    font-family: "Lato" ,sans-serif;
+
+}
+
+.contact-us{
+    background-image: linear-gradient(
+        to right,
+        rgb(9, 6, 1) 0%,
+        rgb(196, 171, 137) 100%
+      );
+      color: white;
+      font-size: 20px;
+      padding: 40px; 
+}
+
+form{
+    padding: 40px;
+    
+
+}
+.form-group{
+    margin-bottom: 20px;
+    
+}
+.form-group label{
+    display: flex;
+    font-size: 20px;
+    margin-bottom: 16px;
+    margin-left: 8px;
+}
+ 
+.form-group input,textarea {
+    width: 340px;
+    height: 30px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 4px;
+    border: 10px;
+    border-radius: 79px;
+}
+
+textarea{
+    width: 340px;
+    height: 200px;
+    border-radius: 25px;
+}
+
+input.invalid{
+    border: 1px solid red;
+}
+
+.error-hint{
+    color: red;
+    font-size: 12px;
+}
+hr{
+    height: 1px;
+    background-color:rgb(0, 114, 66);
+    border: none;
+    margin-top: 30px;
+    margin-bottom:30px;
+}
+button {
+    padding: 10px;
+    font-size: 18px;
+    background-color: none;
+    background: none;
+    border: 1px solid rgb(0, 114, 66);
+    border-radius: 8px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+button:hover{
+background-color: rgb(0, 114, 66);
+border:black;
+color:white;
+}
+.hidden{
+    display: none;
+}
+.thank_you{
+    padding: 40px;
+    font-size: 32px;
+    text-align: center;
+}
+
+#komplet{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
+}
+form{
+    background-color: rgb(51,51,51,0.19);
+    
+
+}
+.flex-form-group{
+    display: flex;
+    flex-direction: row;
+
+}
+
