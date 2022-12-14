@@ -62,7 +62,7 @@ const isValidPhone = (phone) => {
   };
   
   const form= document.querySelector('form');
-  const thankyou= document.querySelector('.thank_you');
+  const validForm= document.querySelector('.validForm');
 
   const nameInput =document.querySelector('input[name = "emri" ] ');
   const EmailInput =document.querySelector('input[name = "Email" ] ');
@@ -123,7 +123,7 @@ console.log(nameInput);
     validateInputs();
     if (isFormValid) {
         form.remove();
-        thankyou.classList.remove("hidden");
+        validForm.classList.remove("hidden");
     }
  });
 
