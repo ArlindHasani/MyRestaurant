@@ -1,64 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="stylecontact.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<div class="contact-us" >
-    <h1>Contact Us</h1>
-    <p>
+<body id="contact_body">
+    <header>
+        <nav class="navbar">
+            <div class="navbar_left">
+            <img src="https://cdn-icons-png.flaticon.com/512/3170/3170733.png">
+            <h3 class="caveat_header">My<span>Restaurant</span></h3>
+             </div>
+            <ul class="navbar_links">
+                <li><a href="index.html" class="montserrat_paragraph navbar_link">HOME</a></li>
+                <li><a href="menu.html" class="montserrat_paragraph navbar_link">MENU</a></li>
+                <li><a href="#" class="montserrat_paragraph navbar_link">ABOUT</a></li>
+                <li><a href="contact.html" class="montserrat_paragraph navbar_link">CONTACT US</a></li>
+                
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+<div class="contact-slogan" >
+    <h1 class="iceberg_title">Contact Us</h1>
+    <p class="iceberg_header">
         We would love to hear from you! 
         Please send us a message.
     </p>
 </div>
-<div id="komplet">
-<form>
-    
-    <div class="form-group">
-        <label>Emri dhe Mbiemri</label>
-        <input name="emri" class="" placeholder="Emri dhe Mbiemri "/>
-         <div  class="error-hint hidden">Emri dhe mbiemri mungon!</div>
-    </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input name="Email" class="" placeholder="Email "/>
-         <div  class="error-hint hidden">Email mungon!</div>
-    </div> 
-    <div class="form-group">
-        <label>Nr.Telefonit</label>
-        <input name="phone"  placeholder="Vendoseni Nr.Telefonit ketu "/>
-         <div  class="error-hint hidden">Nr.Telefonit mungon!</div>
-    </div>
-    <div class="form-group">
-        <label>Data</label>
-        <input type="date" name="date"  placeholder="Vendoseni date ketu "/>
-         <div  class="error-hint hidden">Data mungon!</div>
-    </div>
-    <div class="form-group">
-        <label>Mesazhi</label>
-        <textarea name="message"  placeholder="Vendoseni mesazhin ketu "></textarea>
-         <div  class="error-hint hidden">Mesazhi mungon!</div>
-    </div> 
 
 
-    <hr />
-    
-    <button >Dergo</button>
-</form>
+<div id="contact-form">
+    <form>
+        <div class="form-group">
+            <label class="montserrat_small_paragraph_2">Name and Surename</label>
+            <input name="emri" class="" placeholder="Name and surename "/>
+            <div  class="error-hint hidden">Name and surname is missing!</div>
+        </div>
+        <div class="form-group">
+            <label class="montserrat_small_paragraph_2">Email</label>
+            <input name="Email" class="" placeholder="Email "/>
+            <div  class="error-hint hidden">Email is wrong or missing!</div>
+        </div> 
+        <div class="form-group">
+            <label class="montserrat_small_paragraph_2">Phone number</label>
+            <input name="phone"  placeholder="Phone number "/>
+            <div  class="error-hint hidden">Phone number is wrong or missing!</div>
+        </div>
+        <div class="form-group">
+            <label class="montserrat_small_paragraph_2">Date</label>
+            <input type="date" name="date"  placeholder="Put the date here "/>
+            <div  class="error-hint hidden">Date is missing!</div>
+        </div>
+        <div class="form-group">
+            <label class="montserrat_small_paragraph_2">Message</label>
+            <textarea name="message"  placeholder="Put your message here "></textarea>
+            <div class="error-hint hidden">You must input a message!</div>
+        </div> 
+
+
+        <hr />
+        
+        <button class="button_type3">Dergo</button>
+    </form>
 </div> 
 
-<div class="thank_you hidden">Faleminderit per rezervimin!</div>
+<div class="thank_you hidden iceberg_title"><span>Faleminderit per rezervimin!</span></div>
 
-    <script src="scriptcontact.js"></script>
+
+    <section id="footer" >
+        <div class="content">
+            <div class="socials">
+                <img class="social_img" src="Images/facebook.png" style="width: 55px;">
+                <img class="social_img" src="Images/twitter.png" style="width: 55px;">
+                <img class="social_img" src="Images/gmail.png" style="width: 55px;">
+                <img class="social_img" src="Images/linkedin.png" style="width: 55px;">
+            </div>
+            
+            <div class="links">
+                <a href="index.html" class="button_type2 iceberg_header">Home</a>
+                <a href="menu.html" class="button_type2 iceberg_header">Menu</a>
+                <a href="#" class="button_type2 iceberg_header">About Us</a>
+                <a href="#" class="button_type2 iceberg_header">Contact Us</a>
+            </div>
+
+            <div class="information">
+                <ul class="information_links">
+                    <li class="iceberg_header">VISIT US</li>
+                    <li class="iceberg_paragraph">Rr. Bill Klinton</li>
+                    <li class="iceberg_paragraph">Prishtine, KS 10000</li>
+                </ul>
+                <ul class="information_links">
+                    <li class="iceberg_header">WORKING HOURS</li>
+                    <li class="iceberg_paragraph">Hane - Premte 09:00 - 21:00</li>
+                    <li class="iceberg_paragraph">Shtune 09:00 - 24:00</li>
+                    <li class="iceberg_paragraph">Dielle 09:00 - 23:00</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="copyright">
+        <p class="iceberg_paragraph">Copyright 2022, MyRestaurant Inc.</p>
+    </div>
+
+<script src="script.js"></script>
     
 </body>
 </html>

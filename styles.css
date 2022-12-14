@@ -107,6 +107,12 @@ section{
     color: white;
 }
 
+.montserrat_small_paragraph_2{
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
 .montserrat_small_paragraph{
     font-family: "Montserrat", sans-serif;
     font-size: 11px;
@@ -207,21 +213,41 @@ section{
     background-color: white;
 }
 
+.button_type3 {
+    padding: 10px;
+    font-size: 18px;
+    background-color: none;
+    background: none;
+    color: white;
+  /*  border: 1px solid rgb(0, 114, 66);*/
+    border: 1px solid var(--main-color);
+    border-radius: 8px;
+    transition: 0.5s;
+    cursor: pointer;
+    transform: translateX(180%);
+}
+
+.button_type3:hover{
+    background-color: var(--main-color);
+    color:white;
+}
+
 /* Header Start */
 
 header{
-    position: fixed;
-    width: 100%;
-    height: 10vh;
-    padding: 1.5rem;
-    background-color: var(--black);
-    border-bottom: 1px solid var(--main-color);
-    z-index: 100;
 }
 
 /* Navbar */
 
 .navbar{
+    width: 100%;
+    top: 0;
+    padding: 1.5rem;
+    z-index: 100;
+    position: fixed;
+
+    background-color: var(--black);
+    border-bottom: 1px solid var(--main-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -478,37 +504,45 @@ header{
     }
 }
 /* contact*/
-body{
-    margin: 0;
-    font-family: "Lato" ,sans-serif;
 
+#footer{
+    margin-top: 10vh;
 }
 
-.contact-us{
-    background-image: linear-gradient(
-        to right,
-        rgb(9, 6, 1) 0%,
-        rgb(196, 171, 137) 100%
-      );
-      color: white;
-      font-size: 20px;
-      padding: 40px; 
+#contact_body{
+    background: linear-gradient(black, grey);   
+    background-image: url(Images/contact_banner.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, .4);
+    background-blend-mode: multiply;
 }
 
-form{
+.contact-slogan{
+    margin-top: 10vh;
+    color: white;
+    font-size: 20px;
+    padding: 40px; 
+    background-color: rgba(0, 0, 0, .6);
+    background-blend-mode: multiply;
+}
+
+#contact-form{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+#contact-form form{
     padding: 40px;
-    
+    margin-top: 5%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
 
-}
-.form-group{
-    margin-bottom: 20px;
-    
-}
 .form-group label{
     display: flex;
-    font-size: 20px;
-    margin-bottom: 16px;
-    margin-left: 8px;
+    margin: 10px 0px 10px 8px;
 }
  
 .form-group input,textarea {
@@ -536,53 +570,30 @@ input.invalid{
     color: red;
     font-size: 12px;
 }
+
+
 hr{
     height: 1px;
-    background-color:rgb(0, 114, 66);
+    background-color: var(--main-color);
     border: none;
     margin-top: 30px;
     margin-bottom:30px;
 }
-button {
-    padding: 10px;
-    font-size: 18px;
-    background-color: none;
-    background: none;
-    border: 1px solid rgb(0, 114, 66);
-    border-radius: 8px;
-    transition: 0.5s;
-    cursor: pointer;
+
+.hidden{
+   display: none;
 }
 
-button:hover{
-background-color: rgb(0, 114, 66);
-border:black;
-color:white;
-}
-.hidden{
-    display: none;
-}
 .thank_you{
-    padding: 40px;
-    font-size: 32px;
+    animation: fadeIn 2s;
+    transform: translateY(45%);
+    height: 60vh;
     text-align: center;
 }
 
-#komplet{
-    background-color: antiquewhite;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    
-}
-form{
-    background-color: rgb(51,51,51,0.19);
-    
-
-}
-.flex-form-group{
-    display: flex;
-    flex-direction: row;
-
+.thank_you > span{
+    border: 1px solid var(--main-color);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
 }
 
