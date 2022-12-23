@@ -45,11 +45,18 @@ function activeLeft(){
         }
     }
 }
+
 /*contact*/
 const isValidEmail = (email) => {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   };
+
+const isValidGuest = (email) => {
+  const re = /^[1-9]{1}$/;
+  return re.test(String(email).toLowerCase());
+};
+
 /*const isValidDate =(date) => {
   const re = /^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/;
   return re.test(String(date).toLowerCase());
@@ -65,12 +72,13 @@ const isValidPhone = (phone) => {
   const validForm= document.querySelector('.validForm');
 
   const nameInput =document.querySelector('input[name = "emri" ] ');
+  const guestInput =document.querySelector('input[name = "guests" ] ');
   const EmailInput =document.querySelector('input[name = "Email" ] ');
   const phoneInput =document.querySelector('input[name = "phone" ] ');
   const dateInput =document.querySelector('input[name = "date" ] ');
   const messageInput =document.querySelector('textarea[name = "message" ] ');
 
-  const inputs =[nameInput,EmailInput,phoneInput,messageInput];
+  const inputs =[nameInput, guestInput, EmailInput,phoneInput,messageInput];
 
 console.log(nameInput);
 
@@ -96,6 +104,10 @@ console.log(nameInput);
     if(!nameInput.value){
         isFormValid = false;
         invalidateElm(nameInput);
+      }
+      if(!isValidGuest(guestInput.value)){
+        isFormValid =false;
+        invalidateElm(guestInput);
       }
       if(!isValidEmail(EmailInput.value)){
         isFormValid =false;
@@ -127,9 +139,9 @@ console.log(nameInput);
     }
  });
 
- inputs.forEach( input => {
+ /*inputs.forEach( input => {
   input.validateInputs('input', ()=>{
     validateInputs();
  });
- });
+ });*/
  
