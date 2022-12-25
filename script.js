@@ -57,11 +57,11 @@ const isValidGuest = (email) => {
   return re.test(String(email).toLowerCase());
 };
 
-/*const isValidDate =(date) => {
-  const re = /^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/;
+const isValidDate =(date) => {
+  const re = /^(0?[1-9]|1[0-2])[\/](0?[1-9]|[1-2][0-9]|3[01])[\/]20(22|23)$/;
   return re.test(String(date).toLowerCase());
 
-}*/
+}
 
 const isValidPhone = (phone) => {
     const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{5}[-\s\.]?[0-9]{3}$/im;
@@ -78,7 +78,7 @@ const isValidPhone = (phone) => {
   const dateInput =document.querySelector('input[name = "date" ] ');
   const messageInput =document.querySelector('textarea[name = "message" ] ');
 
-  const inputs =[nameInput, guestInput, EmailInput,phoneInput,messageInput];
+  const inputs =[nameInput, guestInput, EmailInput,phoneInput, dateInput, messageInput];
 
 console.log(nameInput);
 
@@ -117,12 +117,10 @@ console.log(nameInput);
         isFormValid =false;
         invalidateElm(phoneInput);
       }
-      /*
       if(!isValidDate(dateInput.value)){
         isFormValid =false;
         invalidateElm(dateInput);
       }
-      */
       if(!messageInput.value){
         isFormValid =false;
         invalidateElm(messageInput);
@@ -139,9 +137,9 @@ console.log(nameInput);
     }
  });
 
- /*inputs.forEach( input => {
+ inputs.forEach( input => {
   input.validateInputs('input', ()=>{
     validateInputs();
  });
- });*/
+ });
  
