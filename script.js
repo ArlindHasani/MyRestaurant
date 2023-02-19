@@ -46,100 +46,88 @@ function activeLeft(){
     }
 }
 
+const recipesContainers = [...document.querySelectorAll('.recipes')];
+const nxtBtn = [...document.querySelectorAll('.goRight')];
+const preBtn = [...document.querySelectorAll('.goLeft')];
+
+recipesContainers.forEach((item, i) => {
+    let containerDimensions = item.getBoundingClientRect();
+    let containerWidth = containerDimensions.width;
+    
+    nxtBtn[i].addEventListener('click', () => {
+        item.scrollLeft += containerWidth;
+    })
+
+    preBtn[i].addEventListener('click', () => {
+        item.scrollLeft -= containerWidth;
+    })
+})
+
 /*contact*/
-const isValidEmail = (email) => {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  };
 
-const isValidGuest = (email) => {
-  const re = /^[1-9]{1}$/;
-  return re.test(String(email).toLowerCase());
-};
-
-const isValidDate =(date) => {
-  const re = /^(0?[1-9]|1[0-2])[\/](0?[1-9]|[1-2][0-9]|3[01])[\/]20(22|23)$/;
-  return re.test(String(date).toLowerCase());
-
-}
-
-const isValidPhone = (phone) => {
-    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{5}[-\s\.]?[0-9]{3}$/im;
-    return re.test(String(phone).toLowerCase());
-  };
-  
-  const form= document.querySelector('form');
-  const validForm= document.querySelector('.validForm');
-
+function validateReservations(){
   const nameInput =document.querySelector('input[name = "emri" ] ');
   const guestInput =document.querySelector('input[name = "guests" ] ');
   const EmailInput =document.querySelector('input[name = "Email" ] ');
   const phoneInput =document.querySelector('input[name = "phone" ] ');
   const dateInput =document.querySelector('input[name = "date" ] ');
-  const messageInput =document.querySelector('textarea[name = "message" ] ');
+  const messageInput =document.querySelector('input[name = "message" ] ');
 
-  const inputs =[nameInput, guestInput, EmailInput,phoneInput, dateInput, messageInput];
+  function resetElements(input){
+    input.classList.remove("invalid");
+    input.nextElementSibling.classList.add("hidden");
 
-console.log(nameInput);
-
-  let isFormValid = false;
-
-  let isValidationOn =false;
-
-  const resetElm=(elm)=>{
-    elm.classList.remove("invalid");
-    elm.nextElementSibling.classList.add("hidden");
-   
   }
-  const invalidateElm= (elm) =>{
-    elm.classList.add("invalid");
-    elm.nextElementSibling.classList.remove("hidden");
+
+  const isValidEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  const isValidGuest = /^[1-9]{1}$/;
+
+  const isValidDate = /^(2023|2024)\/(0[1-9]|1[0-2])\/(0[1-9]|[1-2][0-9]|3[0-1])$/;
+
+  const isValidPhone = /^(049|044|045)[0-9]{6}$/;
+
+
+
+  let isFormValid = true;
+
+  if(nameInput.value == ""){
+    nameInput.classList.add("invalid");
+    nameInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(nameInput);
   }
-  const validateInputs = () =>{
-      if(!isValidationOn)return;
-        isFormValid = true;
-    inputs.forEach(resetElm) ;
+  if(guestInput.value == "" || !isValidGuest.test(guestInput.value)){
+    guestInput.classList.add("invalid");
+    guestInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(guestInput);
+  }
+  if(EmailInput.value == "" || !isValidEmail.test(EmailInput.value)){
+    EmailInput.classList.add("invalid");
+    EmailInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(EmailInput);
+  }
+  if(phoneInput.value == "" || !isValidPhone.test(phoneInput.value)){
+    phoneInput.classList.add("invalid");
+    phoneInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(phoneInput);
+  }
+  if(dateInput.value == "" || !isValidDate.test(dateInput.value)){
+    dateInput.classList.add("invalid");
+    dateInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(dateInput);
+  }
+
+  return true;
+};
 
 
-    if(!nameInput.value){
-        isFormValid = false;
-        invalidateElm(nameInput);
-      }
-      if(!isValidGuest(guestInput.value)){
-        isFormValid =false;
-        invalidateElm(guestInput);
-      }
-      if(!isValidEmail(EmailInput.value)){
-        isFormValid =false;
-        invalidateElm(EmailInput);
-      }
-      if(!isValidPhone(phoneInput.value)){
-        isFormValid =false;
-        invalidateElm(phoneInput);
-      }
-      if(!isValidDate(dateInput.value)){
-        isFormValid =false;
-        invalidateElm(dateInput);
-      }
-      if(!messageInput.value){
-        isFormValid =false;
-        invalidateElm(messageInput);
-      }
-  };
-
- form.addEventListener('submit', (e)=> {
-    e.preventDefault();
-    isValidationOn = true;
-    validateInputs();
-    if (isFormValid) {
-        form.remove();
-        validForm.classList.remove("hidden");
-    }
- });
-
- inputs.forEach( input => {
-  input.validateInputs('input', ()=>{
-    validateInputs();
- });
- });
- 

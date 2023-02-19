@@ -1,30 +1,20 @@
+<?php
+if (!isset($_SESSION)) {
+  session_start();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>MyRestaurant</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3170/3170733.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="navbar_left">
-            <img src="https://cdn-icons-png.flaticon.com/512/3170/3170733.png">
-            <h3 class="caveat_header">My<span>Restaurant</span></h3>
-             </div>
-            <ul class="navbar_links">
-                <li><a href="index.html" class="montserrat_paragraph navbar_link">HOME</a></li>
-                <li><a href="menu.html" class="montserrat_paragraph navbar_link">MENU</a></li>
-                <li><a href="contact.html" class="montserrat_paragraph navbar_link">CONTACT US</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+    <?php include '../Objektet/header.php'; ?>
 
     <section class="menu_selector">
         <h2 class="caveat_title">Our Menu</h2>
@@ -38,7 +28,7 @@
     </section>
 
     <section id="salad_section" class="section_leftToRight">
-        <img src="Images/Salad.png" class="menu_image">
+        <img src="../Images/Salad.png" class="menu_image">
         <div class="content content_leftToRight">
             <p class="iceberg_title section_title">SALADS</p>
             <ul class="menu_items">
@@ -60,11 +50,11 @@
                 <li class="menu_items_title"><span class="montserrat_paragraph">Chicken Breast</span><br><span class="montserrat_small_paragraph">3 pieces of chicken breast, friest, mushroom sauce, rice</span></li>
             </ul>
         </div>
-        <img src="Images/Meat.png" class="menu_image">
+        <img src="../Images/Meat.png" class="menu_image">
     </section>
 
     <section id="seafood_section" class="section_leftToRight">
-        <img src="Images/Seafood.png" class="menu_image">
+        <img src="../Images/Seafood.png" class="menu_image">
         <div class="content content_leftToRight">
             <p class="iceberg_title section_title">SEAFOOD</p>
             <ul class="menu_items">
@@ -86,11 +76,11 @@
                 <li class="menu_items_title"><span class="montserrat_paragraph">Cookies</span><br><span class="montserrat_small_paragraph">chocolate chip, toffee, coconut brown butter, chocolate peanute chip</span></li>
             </ul>
         </div>
-        <img src="Images/Sweets.png" class="menu_image">
+        <img src="../Images/Sweets.png" class="menu_image">
     </section>
 
     <section id="drinks_section" class="section_leftToRight">
-        <img src="Images/Drinks.png" class="menu_image">
+        <img src="../Images/Drinks.png" class="menu_image">
         <div class="content content_leftToRight">
             <p class="iceberg_title section_title">DRINKS</p>
             <ul class="menu_items">
@@ -102,39 +92,8 @@
         </div>
     </section>
 
-    <section id="footer" >
-        <div class="content">
-            <div class="socials">
-                <img class="social_img" src="Images/facebook.png">
-                <img class="social_img" src="Images/twitter.png">
-                <img class="social_img" src="Images/gmail.png">
-                <img class="social_img" src="Images/linkedin.png">
-            </div>
-            
-            <div class="links">
-                <a href="index.html" class="button_type2 iceberg_header">Home</a>
-                <a href="menu.html" class="button_type2 iceberg_header">Menu</a>
-                <a href="contact.html" class="button_type2 iceberg_header">Contact Us</a>
-            </div>
+    <?php include '../Objektet/footer.php'; ?>
 
-            <div class="information">
-                <ul class="information_links">
-                    <li class="iceberg_header">VISIT US</li>
-                    <li class="iceberg_paragraph">Rr. Bill Klinton</li>
-                    <li class="iceberg_paragraph">Prishtine, KS 10000</li>
-                </ul>
-                <ul class="information_links">
-                    <li class="iceberg_header">WORKING HOURS</li>
-                    <li class="iceberg_paragraph">Hane - Premte 09:00 - 21:00</li>
-                    <li class="iceberg_paragraph">Shtune 09:00 - 24:00</li>
-                    <li class="iceberg_paragraph">Dielle 09:00 - 23:00</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <div class="copyright">
-        <p class="iceberg_paragraph">Copyright 2022, MyRestaurant Inc.</p>
-    </div>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
