@@ -645,6 +645,123 @@ input.invalid{
     width: 20ch;
 }
 
+/* News Page */
+
+#newsHeader{
+    text-align: center;
+    margin-top: 15vh;
+}
+
+#newsHeader h2{
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--main-color);
+}
+
+#latestNews h3{
+    padding-bottom: 30px;
+}
+
+.latestNews{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.latestNewsContainer{
+    padding: 30px;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.latestNewsImage{
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    opacity: 0.7;
+    padding-bottom: 15px;
+    border-radius: 7px;
+}
+
+.latestNewsTitle{
+    flex: 1;
+}
+
+.latestNewsContent{
+    padding: 15px 0;
+    width: 30ch;
+    max-width: 100%;
+}
+
+.latestNewsFooter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50%;
+}
+
+.latestNewsFooter .montserrat_paragraph{
+    font-size: 9px;
+    color: rgba(255,255,255, .6);
+}
+
+/* News Section */
+
+.news{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+#news h3{
+    padding-bottom: 30px;
+}
+
+
+.newsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.newsContainer .newsImage{
+    width: 100%;
+    height: 320px;
+    opacity: 0.6;
+}
+
+.newsContentContainer{
+    padding: 20px;
+    flex: 1;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.newsContentContainer .newsTitle{
+    flex: 1;
+}
+
+.newsContentContainer *{
+    margin-top: 10px;
+}
+
+.newsContentContainer .newsFooter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.newsContentContainer .newsFooter .montserrat_paragraph{
+    font-size: 9px;
+    color: rgba(255,255,255, .6);
+}
 
 /* Responsive */
 
@@ -764,14 +881,17 @@ input.invalid{
         padding: 20px;
         border-radius: 10px;
         background-color: rgba(0, 0, 0, 0.6);
+        max-width: 100%;
     }
 
     .form-group label{
+        max-width: 100%;
         display: flex;
         margin: 10px 0px 10px 8px;
     }
     
     .form-group input {
+        max-width: 100%;
         width: 340px;
         height: 30px;
         padding: 10px;
@@ -804,5 +924,11 @@ input.invalid{
         padding: 0;
         margin-right: 5vw;
         width: 100vw;
+    }
+
+    #newsHeader h2{
+        font-size: 18px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--main-color);
     }
 }

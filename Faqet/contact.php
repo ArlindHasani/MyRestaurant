@@ -76,7 +76,7 @@
 
 
                 <hr/>
-                <button name="submitReservation" type="submit" class="button_type3">Submit</button>
+                <button name="submitReservation" type="submit" class="button_type3 submitReservationBtn">Submit</button>
             </form>
         </div> 
 
