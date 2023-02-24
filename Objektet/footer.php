@@ -10,9 +10,10 @@
                 </div>
                 
                 <div class="links">
-                    <a href="../Faqet/index.php" class="button_type2 iceberg_header">Home</a>
-                    <a href="../Faqet/menu.php" class="button_type2 iceberg_header">Menu</a>
-                    <a href="../Faqet/contact.php" class="button_type2 iceberg_header">Contact Us</a>
+                    <a href="../Pages/index.php" class="button_type2 iceberg_header">Home</a>
+                    <a href="../Pages/menu.php" class="button_type2 iceberg_header">Menu</a>
+                    <a href="../Pages/news.php" class="button_type2 iceberg_header">News</a>
+                    <a href="../Pages/contact.php" class="button_type2 iceberg_header">Contact Us</a>
                 </div>
 
                 <div class="information">

@@ -22,7 +22,7 @@ $recetatCRUD = new recetatCRUD();
     <section id="home">
         <div class="home_content">
             <h2 class="montserrat_title">FOOD AND ART COMBINED IN ONE PLACE</h2>
-            <a href="../Faqet/menu.php" class="button_type1 iceberg_header">Explore Our Menu</a>
+            <a href="../Pages/menu.php" class="button_type1 iceberg_header">Explore Our Menu</a>
         </div>
     </section>
 
@@ -55,7 +55,7 @@ $recetatCRUD = new recetatCRUD();
         <div class="content content_leftToRight">
             <p class="iceberg_title content_title">RESERVE YOUR TABLE!</p>
             <p class="montserrat_paragraph">Enjoy a private dinner with your friends or family by reserving a table ahead of time!</p>
-            <a href="../Faqet/contact.php" class="button_type2 iceberg_header">Reserve Now</a>
+            <a href="../Pages/contact.php" class="button_type2 iceberg_header">Reserve Now</a>
         </div>
     </section>
 
@@ -63,7 +63,7 @@ $recetatCRUD = new recetatCRUD();
         <div class="content content_rightToLeft">
             <p class="iceberg_title">EXPLORE OUR MENU</p>
             <p class="montserrat_paragraph">Experience our exquisite menu, created by professional chefs combining some of the finest ingredients available.</p>
-            <a href="../Faqet/menu.php" class="button_type2 iceberg_header">Explore Menu</a>
+            <a href="../Pages/menu.php" class="button_type2 iceberg_header">Explore Menu</a>
         </div>
         <img src="../Images/Menu.png" class="section_image">
     </section>

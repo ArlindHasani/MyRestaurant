@@ -228,7 +228,6 @@ section {
     border-radius: 8px;
     transition: 0.5s;
     cursor: pointer;
-    transform: translateX(180%);
 }
 
 .button_type3:hover{
@@ -482,14 +481,14 @@ hr{
 }
 
 
-#contact-form{
+#form{
     display: flex;
     justify-content: center; 
     align-items: center;
     margin-top: 2rem;
 }
 
-#contact-form form{
+#form form{
     padding: 40px;
     background-color: rgba(0, 0, 0, 0.6);
 }
@@ -532,7 +531,7 @@ input.invalid{
 }
 
 .hidden{
-   display: none;
+   display: none !important;
 }
 
 .validForm{
@@ -763,10 +762,97 @@ input.invalid{
     color: rgba(255,255,255, .6);
 }
 
+/* Login Page */
+
+#loginHeader{
+    width: 100%;
+    margin-top: 15vh;
+}
+
+.loginTitle{
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.signupCta{
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.signupCta a{
+    color: var(--main-color)
+}
+
+/* User Profile */
+
+#profile{
+    margin-top: 10vh;
+}
+
+#profile h2,h4{
+    padding-bottom: 30px;
+}
+
+.profileLinks{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 8px;
+}
+
+.profileLinks a{
+    width: fit-content;
+    padding: 20px;
+    text-align: center;
+}
+
+.profileActions{
+    width: fit-content;
+    background-color: rgba(0,0,0,0.2);
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.viewProfileContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.profileActions * {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+table {
+    border: 2px solid var(--main-color);
+    border-collapse: collapse;
+}
+  
+
+th, td {
+    border: 1px solid var(--main-color);
+    padding: 8px;
+}
+
+/* Edit User Profile */
+
+.editProfileActions{
+    display: flex;
+    justify-content: space-between;
+}
+
 /* Responsive */
 
 @media (max-width: 768px){
-
+    .navbar_links .montserrat_paragraph{
+        font-size: 14px;
+    }
 
     .home_content h2{
         font-size: 24px;
@@ -877,7 +963,7 @@ input.invalid{
     }
 
 
-    #contact-form form{
+    #form form{
         padding: 20px;
         border-radius: 10px;
         background-color: rgba(0, 0, 0, 0.6);
@@ -930,5 +1016,10 @@ input.invalid{
         font-size: 18px;
         padding-bottom: 20px;
         border-bottom: 1px solid var(--main-color);
+    }
+
+    .profileLinks a{
+        margin-top: 15px;
+        font-size: 16px;
     }
 }

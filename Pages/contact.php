@@ -17,7 +17,7 @@
 
         unset($_POST);
         $rezervimetCRUD->shtoRezervimin();
-        header("Location: ../Faqet/successfulReservation.php");
+        header("Location: ../Pages/successfulReservation.php");
     }
 
 ?>
@@ -41,7 +41,7 @@
                 Enjoy world-class food made with passion and love!
             </p>
         </div>
-        <div id="contact-form">
+        <div id="form">
             <form  name="reservationForm" onsubmit="return validateReservations()" action="" method="post">
                 <div class="form-group">
                     <label class="montserrat_small_paragraph_2">Name and Surname</label>

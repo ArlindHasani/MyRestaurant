@@ -64,6 +64,7 @@ $newsCRUD = new newsCRUD();
             </div>
         </section>
 
+        <?php include '../Objektet/footer.php'; ?>
     </body>
     <script src="../script.js"></script>
 </html>

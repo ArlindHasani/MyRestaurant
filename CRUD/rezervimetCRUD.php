@@ -99,13 +99,18 @@ class rezervimetCRUD extends dbCon
 
     }
 
-    public function lexoRezervimin()
+    public function lexoRezervimet()
     {
         $sql = 'SELECT * FROM rezervimet';
         $stm = $this->dbConn->prepare($sql);
         $stm->execute();
         $rezervimet =$stm->fetchAll(PDO::FETCH_ASSOC);
         return $rezervimet;
+    }
+
+    public function lexoRezervimetUser()
+    {
+        
     }
 
 }

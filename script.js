@@ -65,6 +65,143 @@ recipesContainers.forEach((item, i) => {
 
 /*contact*/
 
+function validateLogin(){
+  const emailInput =document.querySelector('input[name = "userEmail" ] ');
+  const passwordInput =document.querySelector('input[name = "userPassword" ] ');
+
+  function resetElements(input){
+    input.classList.remove("invalid");
+    input.nextElementSibling.classList.add("hidden");
+
+  }
+
+  const isValidEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const isValidPassword = /^(?=.*\d)(?=.*[A-Z]).{8,}$/i;
+
+  if(emailInput.value == "" || !isValidEmail.test(emailInput.value)){
+    emailInput.classList.add("invalid");
+    emailInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(emailInput);
+  }
+  if(passwordInput.value == "" || !isValidPassword.test(passwordInput.value)){
+    passwordInput.classList.add("invalid");
+    passwordInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(passwordInput);
+  }
+
+  return true;
+}
+
+function validateSignUp(){
+  const nameInput = document.querySelector('input[name = "signUpName" ] ');
+  const passwordInput = document.querySelector('input[name = "signUpPassword" ] ');
+  const emailInput = document.querySelector('input[name = "signUpEmail" ] ');
+  const phoneInput = document.querySelector('input[name = "signUpPhone" ] ');
+
+  const isValidName = /^[a-zA-Z]{4,}\s[a-zA-Z]{3,}$/
+  const isValidEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const isValidPassword = /^(?=.*\d)(?=.*[A-Z]).{8,}$/i;
+  const isValidPhone = /^(049|044|045)[0-9]{6}$/; 
+
+  function resetElements(input){
+    input.classList.remove("invalid");
+    input.nextElementSibling.classList.add("hidden");
+
+  }
+
+  if(nameInput.value == "" || !isValidName.test(nameInput.value)){
+    nameInput.classList.add("invalid");
+    nameInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(nameInput);
+  }
+
+  if(passwordInput.value == "" || !isValidPassword.test(passwordInput.value)){
+    passwordInput.classList.add("invalid");
+    passwordInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(passwordInput);
+  }
+
+  if(emailInput.value == "" || !isValidEmail.test(emailInput.value)){
+    emailInput.classList.add("invalid");
+    emailInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(emailInput);
+  }
+
+  if(phoneInput.value == "" || !isValidPhone.test(phoneInput.value)){
+    phoneInput.classList.add("invalid");
+    phoneInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(phoneInput);
+  }
+
+  return true;
+
+
+}
+
+function validateEditProfile(){
+  const nameInput = document.querySelector('input[name = "editUserName" ] ');
+  const passwordInput = document.querySelector('input[name = "editUserPassword" ] ');
+  const emailInput = document.querySelector('input[name = "editUserEmail" ] ');
+  const phoneInput = document.querySelector('input[name = "editUserPhone" ] ');
+
+  const isValidName = /^[a-zA-Z]{4,}\s[a-zA-Z]{3,}$/
+  const isValidEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const isValidPassword = /^(?=.*\d)(?=.*[A-Z]).{8,}$/i;
+  const isValidPhone = /^(049|044|045)[0-9]{6}$/; 
+
+  function resetElements(input){
+    input.classList.remove("invalid");
+    input.nextElementSibling.classList.add("hidden");
+
+  }
+
+  if(nameInput.value == "" || !isValidName.test(nameInput.value)){
+    nameInput.classList.add("invalid");
+    nameInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(nameInput);
+  }
+
+  if(passwordInput.value == "" || !isValidPassword.test(passwordInput.value)){
+    passwordInput.classList.add("invalid");
+    passwordInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(passwordInput);
+  }
+
+  if(emailInput.value == "" || !isValidEmail.test(emailInput.value)){
+    emailInput.classList.add("invalid");
+    emailInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(emailInput);
+  }
+
+  if(phoneInput.value == "" || !isValidPhone.test(phoneInput.value)){
+    phoneInput.classList.add("invalid");
+    phoneInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(phoneInput);
+  }
+
+  return true;
+}
+
 function validateReservations(){
   const nameInput =document.querySelector('input[name = "emri" ] ');
   const guestInput =document.querySelector('input[name = "guests" ] ');
@@ -86,10 +223,6 @@ function validateReservations(){
   const isValidDate = /^(2023|2024)\/(0[1-9]|1[0-2])\/(0[1-9]|[1-2][0-9]|3[0-1])$/;
 
   const isValidPhone = /^(049|044|045)[0-9]{6}$/;
-
-
-
-  let isFormValid = true;
 
   if(nameInput.value == ""){
     nameInput.classList.add("invalid");
@@ -130,4 +263,21 @@ function validateReservations(){
   return true;
 };
 
+/* Profile Action CTA */
+
+const viewProfile = document.querySelector('.viewProfile');
+viewProfile.addEventListener("click", () => {
+    const viewProfileContainer = document.querySelector('.viewProfileContainer');
+    const viewReservationsContainer = document.querySelector('.viewReservationsContainer');
+    viewProfileContainer.classList.remove('hidden');
+    viewReservationsContainer.classList.add('hidden');
+});
+
+const viewReservations = document.querySelector('.viewReservations');
+viewReservations.addEventListener("click", () => {
+  const viewProfileContainer = document.querySelector('.viewProfileContainer');
+  const viewReservationsContainer = document.querySelector('.viewReservationsContainer');
+  viewProfileContainer.classList.add('hidden');
+  viewReservationsContainer.classList.remove('hidden');
+});
 
