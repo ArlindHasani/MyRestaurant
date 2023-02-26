@@ -739,17 +739,13 @@ input.invalid{
     flex: 1;
 }
 
-.latestNewsContent{
-    padding: 15px 0;
-    width: 30ch;
-    max-width: 100%;
-}
-
 .latestNewsFooter{
+    margin-top: 5px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 50%;
+    width: 100%;
 }
 
 .latestNewsFooter .montserrat_paragraph{
@@ -761,7 +757,7 @@ input.invalid{
 
 .news{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
 }
 
@@ -784,6 +780,7 @@ input.invalid{
 }
 
 .newsContentContainer{
+    max-width: 100%;
     padding: 20px;
     flex: 1;
     background-color: rgba(0,0,0,0.2);
@@ -791,6 +788,9 @@ input.invalid{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    overflow: auto;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .newsContentContainer .newsTitle{
@@ -811,6 +811,11 @@ input.invalid{
 .newsContentContainer .newsFooter .montserrat_paragraph{
     font-size: 9px;
     color: rgba(255,255,255, .6);
+}
+
+.addArticle{
+    width: 200px;
+    margin-bottom: 10px;
 }
 
 /* Login Page */
@@ -999,8 +1004,26 @@ margin-top: 9.5vh;
 
 .adminAddUserActions{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+}
+
+/* Edit News */ 
+
+.editNewsTextArea{
+    resize: none;
+    width: 100%;
+    min-height: 300px;
+}
+
+.newsActions{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.latestNewsFooter{
+    margin-bottom: 10px;
 }
 
 /* Responsive */
@@ -1241,7 +1264,7 @@ margin-top: 9.5vh;
 
     .button_type4{
         padding: 5px;
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .insightContainer{
@@ -1263,5 +1286,14 @@ margin-top: 9.5vh;
     .adminAddUserActions{
         flex-direction: column;
         gap: 10px;
+    }
+
+    .newsActions{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .latestNewsContent{
+        font-size: 12px;
     }
 }

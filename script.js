@@ -458,6 +458,59 @@ function validateAddUser(){
 }
 
 
+var cancEditNews = false;
+
+function cancelNewsEdit(){
+  cancEditNews = true;
+}
+
+function validateEditNews(){
+  if(cancEditNews){
+    window.location.replace("../Pages/news.php");
+    return false;
+  }
+
+  const newsTitleInput = document.querySelector('input[name = "editNewsTitle" ] ');
+  const newsContentInput = document.querySelector('textarea[name = "editNewsContent" ] ');
+/*   const newsImageInput = document.querySelector('input[name = "editNewsImage" ] '); */
+
+  const isValidTitle = /^(?=.{8,})/;
+  const isValidContent = /^(?=.{20,})/;
+/*   const isValidImage = /^(?=.{20,})/;
+ */
+  function resetElements(input){
+    input.classList.remove("invalid");
+    input.nextElementSibling.classList.add("hidden");
+
+  }
+
+  if(newsTitleInput.value == "" || !isValidTitle.test(newsTitleInput.value)){
+    newsTitleInput.classList.add("invalid");
+    newsTitleInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(newsTitleInput);
+  }
+
+  if(newsContentInput.value == "" || !isValidContent.test(newsContentInput.value)){
+    newsContentInput.classList.add("invalid");
+    newsContentInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(newsContentInput);
+  }
+
+  /* if(newsImageInput.value == "" || !isValidImage.test(newsImageInput.value)){
+    newsImageInput.classList.add("invalid");
+    newsImageInput.nextElementSibling.classList.remove("hidden");
+    return false;
+  }else{
+    resetElements(newsImageInput);
+  } */
+
+  return true;
+}
+
 /* Profile Action CTA */
 
 const viewProfile = document.querySelector('.viewProfile');

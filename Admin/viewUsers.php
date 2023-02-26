@@ -56,7 +56,7 @@
                             <td data-label="Access Level"><?php echo $user['accessLevel']?></td>
                             <td data-label="Actions" class="viewUsersActions">
                                 <a href="../AdminFunctions/deleteUser.php?userID=<?php echo $user['userID']?>">
-                                    <button onsubmittype="submit" class="button_type4 cancelReservation">Delete</button>
+                                    <button type="submit" class="button_type4 cancelReservation">Delete</button>
                                 </a>
                                 <a href="../Admin/editUser.php?userID=<?php echo $user['userID']?>">
                                     <button type="submit" class="button_type4 editReservation">Edit</button>
