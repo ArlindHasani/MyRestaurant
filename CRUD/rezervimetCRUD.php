@@ -136,6 +136,27 @@ class rezervimetCRUD extends dbCon
             return $e->getMessage();
         }
     }
+
+    public function readAllReservations(){
+        $sql = 'SELECT * FROM rezervimet ORDER BY dataRezervuar DESC';
+        $stm = $this->dbConn->prepare($sql);
+        $stm->execute();
+        $rezervimet =$stm->fetchAll(PDO::FETCH_ASSOC);
+        return $rezervimet;
+    }
+
+    public function readActiveReservations(){
+        try{
+            $current_date = date('Y-m-d');
+            $sql = "SELECT * FROM rezervimet WHERE  dataRezervuar > '$current_date'";
+            $stm = $this->dbConn->prepare($sql);
+            $stm->execute();
+            $rezervimi =$stm->fetchAll(PDO::FETCH_ASSOC);
+            return $rezervimi;
+        }catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
     
     public function cancelReservation(){
         try{
