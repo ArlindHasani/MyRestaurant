@@ -50,16 +50,13 @@ const recipesContainers = [...document.querySelectorAll('.recipes')];
 const nxtBtn = [...document.querySelectorAll('.goRight')];
 const preBtn = [...document.querySelectorAll('.goLeft')];
 
-recipesContainers.forEach((item, i) => {
-    let containerDimensions = item.getBoundingClientRect();
-    let containerWidth = containerDimensions.width;
-    
+recipesContainers.forEach((item, i) => {    
     nxtBtn[i].addEventListener('click', () => {
-        item.scrollLeft += containerWidth;
+        item.scrollLeft += 325;
     })
 
     preBtn[i].addEventListener('click', () => {
-        item.scrollLeft -= containerWidth;
+        item.scrollLeft -= 325;
     })
 })
 

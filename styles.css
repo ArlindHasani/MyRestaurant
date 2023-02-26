@@ -1296,4 +1296,16 @@ margin-top: 9.5vh;
     .latestNewsContent{
         font-size: 12px;
     }
+    
+    .insightValueContainer{
+        transform: translateY(-50%);
+    }
+
+    .insightContent{
+        font-size: 12px;
+    }
+
+    .button_type5{
+        padding: 10px;
+    }
 }
