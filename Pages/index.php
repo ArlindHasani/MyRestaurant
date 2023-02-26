@@ -3,8 +3,8 @@ if (!isset($_SESSION)) {
   session_start();
 }
 
-require_once('../CRUD/recetatCRUD.php');
-$recetatCRUD = new recetatCRUD();
+require_once('../CRUD/recipeCRUD.php');
+$recipeCRUD = new recipeCRUD();
 
 ?>
 
@@ -12,7 +12,7 @@ $recetatCRUD = new recetatCRUD();
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>MyRestaurant</title>
+    <title>MyRestaurant | HOME</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3170/3170733.png">
     <link rel="stylesheet" href="../styles.css">
 </head>
@@ -55,7 +55,7 @@ $recetatCRUD = new recetatCRUD();
         <div class="content content_leftToRight">
             <p class="iceberg_title content_title">RESERVE YOUR TABLE!</p>
             <p class="montserrat_paragraph">Enjoy a private dinner with your friends or family by reserving a table ahead of time!</p>
-            <a href="../Pages/contact.php" class="button_type2 iceberg_header">Reserve Now</a>
+            <a href="../Pages/reserve.php" class="button_type2 iceberg_header">Reserve Now</a>
         </div>
     </section>
 
@@ -69,19 +69,19 @@ $recetatCRUD = new recetatCRUD();
     </section>
 
     <section id="slider">
-        <?php $recetat = $recetatCRUD->lexoReceten();?>
+        <?php $recipes = $recipeCRUD->readRecipes();?>
         <h2 class="iceberg_title">OUR RECIPES</h2>
         <div class="recipes">
             <button class="goLeft"><img src="../Images/arrow.png"></button>
             <button class="goRight"><img src="../Images/arrow.png"></button>
             <?php
-            foreach($recetat as $receta){
+            foreach($recipes as $recipe){
             ?>
                 <div class="recipt_item">
-                    <img class="recipt_image" src=<?php echo $receta['fotoRecetes']?>>
-                    <h2 class="iceberg_title recipt_title"><?php echo $receta['emriRecetes']?></h2>
+                    <img class="recipt_image" src=<?php echo $recipe['fotoRecetes']?>>
+                    <h2 class="iceberg_title recipt_title"><?php echo $recipe['emriRecetes']?></h2>
                     <div class="recipt_text">
-                        <p class="montserrat_paragraph cards_content"><?php echo $receta['pershkrimiRecetes']?></p>
+                        <p class="montserrat_paragraph cards_content"><?php echo $recipe['pershkrimiRecetes']?></p>
                     </div>
                 </div>
             <?php

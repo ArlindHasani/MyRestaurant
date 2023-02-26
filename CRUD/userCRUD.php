@@ -7,6 +7,7 @@ if (!isset($_SESSION)) {
 
 class userCRUD extends dbCon
 {
+    private $userID;
     private $userName;
     private $userPassword;
     private $userEmail;
@@ -14,8 +15,9 @@ class userCRUD extends dbCon
     private $accessLevel;
     private $dbConn;
 
-    public function __construct($userName = '', $userPassword = '', $userEmail = '', $userPhone = '', $accessLevel = '')
-    {
+    public function __construct($userID = '',$userName = '', $userPassword = '', $userEmail = '', $userPhone = '', $accessLevel = '')
+    {   
+        $this->userID = $userID;
         $this->userName = $userName;
         $this->userPassword = $userPassword;
         $this->userEmail = $userEmail;
@@ -96,6 +98,28 @@ class userCRUD extends dbCon
         }
     }
 
+    public function adminAddUSer()
+    {
+        try{
+            $sql = "INSERT INTO `users`(`userName`,`userPassword`, `userEmail`, `userPhone`, `accessLevel`) VALUES (?,?,?,?,?)";
+            $stm = $this->dbConn->prepare($sql);
+            $stm->execute([$this->userName, $this->userPassword, $this->userEmail, $this->userPhone, $this->accessLevel]);
+        }catch(Exception $e){
+            return $e->getMessage();
+        }
+    }
+
+    public function deleteUser()
+    {
+        try{
+            $sql= 'DELETE FROM users WHERE userID = ?';
+            $stm = $this->dbConn->prepare($sql);
+            $stm->execute([$this->userID]);
+        }catch(Exeception $e){
+            return $e->getMessage();
+        }
+    }
+
     public function checkUserEmail()
     {
         try {
@@ -142,6 +166,41 @@ class userCRUD extends dbCon
             $stm = $this->dbConn->prepare($sql);
             $stm->execute([$this->userName, $this->userPassword,$this->userEmail,$this->userPhone, $this->userID]);
         }catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function updateUserInfoAdmin()
+    {
+        try{
+            $sql = 'UPDATE users SET userPassword = ?, accessLevel = ? WHERE userID = ?';
+            $stm = $this->dbConn->prepare($sql);
+            $stm->execute([$this->userPassword,$this->accessLevel,$this->userID]);
+        }catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function countAllUsers(){
+        try{
+            $sql = 'SELECT COUNT(*) AS all_users FROM users';
+            $stm = $this->dbConn->prepare($sql);
+            $stm->execute();
+            $allUsers =$stm->fetch(PDO::FETCH_ASSOC);
+            return $allUsers;
+        }catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function readAllUsers(){
+        try{
+            $sql = 'SELECT * FROM users';
+            $stm = $this->dbConn->prepare($sql);
+            $stm->execute();
+            $users = $stm->fetchAll(PDO::FETCH_ASSOC);
+            return $users;
+        }catch(Exception $e){
             return $e->getMessage();
         }
     }

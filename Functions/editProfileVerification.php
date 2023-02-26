@@ -5,7 +5,11 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if ($_SESSION['saveEdit'] == true) {
+if(isset($_GET['userID'])){
+    updateUserInformation();
+}
+
+function updateUserInformation(){
     $userCRUD = new userCRUD();
     $userCRUD->setUserID($_GET['userID']);
     $userInformation = $userCRUD->checkUserInfo($_GET['userID']);

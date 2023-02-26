@@ -24,8 +24,7 @@ if (isset($_POST['submitLogin'])) {
             $_SESSION['userPassword'] = $checkPassword['userPassword'];
             $_SESSION['userEmail'] = $checkPassword['userEmail'];
             $_SESSION['userPhone'] = $checkPassword['userPhone'];
-            $_SESSION['accessLevel'] = $checkPassword['accessLevel'];
-            $_SESSION['loggedIn'] = true;    
+            $_SESSION['accessLevel'] = $checkPassword['accessLevel'];  
             header("Location: ../Pages/profile.php");
         } else {
             $_SESSION['passwordError'] = true;

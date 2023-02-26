@@ -11,7 +11,7 @@ $newsCRUD = new newsCRUD();
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>MyRestaurant</title>
+        <title>MyRestaurant | NEWS</title>
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3170/3170733.png">
         <link rel="stylesheet" href="../styles.css">
     </head>
@@ -64,7 +64,6 @@ $newsCRUD = new newsCRUD();
             </div>
         </section>
 
-        <?php include '../Objektet/footer.php'; ?>
     </body>
     <script src="../script.js"></script>
 </html>

@@ -5,7 +5,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-class recetatCRUD extends dbCon
+class recipeCRUD extends dbCon
 {
     private $recetaID;
     private $emriRecetes;
@@ -63,7 +63,7 @@ class recetatCRUD extends dbCon
         $this->pershkrimiRecetes = $pershkrimiRecetes;
     }
 
-    public function shtoReceten()
+    public function addRecipe()
     {
         try {
             $this->setRecetaID($_SESSION['IDRecetes']);
@@ -81,7 +81,7 @@ class recetatCRUD extends dbCon
         }
     }
 
-    public function lexoReceten()
+    public function readRecipes()
     {
         $sql = 'SELECT emriRecetes, fotoRecetes, pershkrimiRecetes FROM recetat';
         $stm = $this->dbConn->prepare($sql);

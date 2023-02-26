@@ -3,32 +3,32 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-  
+
+if(!isset($_SESSION['userID'])){
+    header("Location: ../Pages/login.php");
+}
+ 
+if($_GET['userID'] != $_SESSION['userID']){
+    header ("Location: ../Pages/profile.php");
+}
+
 require_once('../CRUD/userCRUD.php');
 $userCRUD =  new userCRUD();  
-$userID = $_GET['userID'];
 
-$currentUserInfo = $userCRUD->checkUserInfo($userID);
-
-$saveEdit = "";
-
-if(isset($_POST['cancelUserProfileEdit'])){
-    echo "<script>document.location='../Pages/profile.php'</script>";
-}
+$currentUserInfo = $userCRUD->checkUserInfo($_GET['userID']);
 
 if($_SESSION['editProfileEmailError'] == true){
     $editProfileEmailError= '';
 }else{
     $editProfileEmailError="hidden";
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>MyRestaurant</title>
+        <title>MyRestaurant | EDIT PROFILE</title>
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3170/3170733.png">
         <link rel="stylesheet" href="../styles.css">
     </head>
@@ -68,7 +68,7 @@ if($_SESSION['editProfileEmailError'] == true){
                             <hr/>
                             <div class="editProfileActions">
                                 <button name="saveUserProfileEdit" type="submit" class="button_type3 saveUserProfileEdit">Save</button>
-                                <button name="cancelUserProfileEdit" type="submit" class="button_type3 cancelUserProfileEdit">Cancel</button>
+                                <button onclick="cancelUserProfileEdit()" type="submit" class="button_type3 cancelUserProfileEdit">Cancel</button>
                             </div>
                         </form>
                     </div> 

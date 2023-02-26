@@ -14,6 +14,10 @@ if($_SESSION['passwordError'] == true){
 }else{
     $hidePassword="hidden";
 }
+
+if(isset($_SESSION['userID'])){
+    header("Location: ../Pages/profile.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -48,12 +52,15 @@ if($_SESSION['passwordError'] == true){
                     <label class="montserrat_small_paragraph_2">Password</label>
                     <input type="password" name="userPassword" class="" placeholder="Enter Password"/>
                     <div class = "error-hint <?php echo $hidePassword ?>">Password is wrong or missing!</div>
+                </div>
                 <hr/>
                 <p class="montserrat_small_paragraph_2 signupCta">Don't have an account ? <a href="../Pages/signup.php">Sign up<a></p>
                 <button name="submitLogin" type="submit" class="button_type3 submitLogin">Log in</button>
             </form>
         </div> 
     </section>
+
     <?php include '../Objektet/footer.php';?>
     <script src="../script.js"></script>
 </body>
+</html>

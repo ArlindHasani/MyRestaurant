@@ -15,8 +15,7 @@
         $rezervimetCRUD->setDataRezervuar($_POST['date']);
         $rezervimetCRUD->setMesazhi($_POST['message']);
 
-        unset($_POST);
-        $rezervimetCRUD->shtoRezervimin();
+        $rezervimetCRUD->addReservation();
         header("Location: ../Pages/successfulReservation.php");
     }
 
@@ -26,7 +25,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>MyRestaurant</title>
+    <title>MyRestaurant | RESERVE</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3170/3170733.png">
     <link rel="stylesheet" href="../styles.css">
 </head>
@@ -35,7 +34,7 @@
 
     <section id="contact_body">
         <div class="contact-slogan" >
-            <h1 class="iceberg_title">Contact Us</h1>
+            <h1 class="iceberg_title">Reserve with Us!</h1>
             <p class="iceberg_header">
                 Reserve your seat at our restaurant! 
                 Enjoy world-class food made with passion and love!

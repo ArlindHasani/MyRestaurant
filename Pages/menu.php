@@ -9,7 +9,7 @@ if (!isset($_SESSION)) {
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>MyRestaurant</title>
+    <title>MyRestaurant | MENU</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3170/3170733.png">
     <link rel="stylesheet" href="../styles.css">
 </head>
